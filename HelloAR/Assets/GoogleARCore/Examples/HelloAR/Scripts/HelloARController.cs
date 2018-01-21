@@ -45,6 +45,13 @@ namespace GoogleARCore.HelloAR
         /// </summary>
         public GameObject AndyAndroidPrefab;
 
+		/// <summary>
+		/// The poland script canvas.
+		/// </summary>
+		public GameObject PolandScriptCanvas; 
+
+		public GameObject Cubeist; 
+
         /// <summary>
         /// A gameobject parenting UI for displaying the "searching for planes" snackbar.
         /// </summary>
@@ -67,11 +74,22 @@ namespace GoogleARCore.HelloAR
         /// </summary>
         private bool m_IsQuitting = false;
 
+
+//		public void awake() 
+//		{
+//			PolandScriptCanvas.SetActive (false); 
+//			// PolandScriptCanvas.GetComponent<Renderer>().enabled = false;
+//
+//		}
+
         /// <summary>
         /// The Unity Update() method.
         /// </summary>
         public void Update()
         {
+			// PolandScriptCanvas.SetActive (false); 
+			// PolandScriptCanvas.GetComponent<Renderer>().enabled = false;
+
             if (Input.GetKey(KeyCode.Escape))
             {
                 Application.Quit();
@@ -128,21 +146,75 @@ namespace GoogleARCore.HelloAR
 
             if (Session.Raycast(touch.position.x, touch.position.y, raycastFilter, out hit))
             {
-                var andyObject = Instantiate(AndyAndroidPrefab, hit.Pose.position, hit.Pose.rotation);
+//                var andyObject = Instantiate(AndyAndroidPrefab, hit.Pose.position, hit.Pose.rotation);
+//
+//                // Create an anchor to allow ARCore to track the hitpoint as understanding of the physical
+//                // world evolves.
+//                var anchor = hit.Trackable.CreateAnchor(hit.Pose);
+//
+//                // Andy should look at the camera but still be flush with the plane.
+//                andyObject.transform.LookAt(FirstPersonCamera.transform);
+//                andyObject.transform.rotation = Quaternion.Euler(0.0f,
+//                    andyObject.transform.rotation.eulerAngles.y, andyObject.transform.rotation.z);
+//
+//                // Make Andy model a child of the anchor.
+//                andyObject.transform.parent = anchor.transform;
+//
+//
 
-                // Create an anchor to allow ARCore to track the hitpoint as understanding of the physical
-                // world evolves.
-                var anchor = hit.Trackable.CreateAnchor(hit.Pose);
 
-                // Andy should look at the camera but still be flush with the plane.
-                andyObject.transform.LookAt(FirstPersonCamera.transform);
-                andyObject.transform.rotation = Quaternion.Euler(0.0f,
-                    andyObject.transform.rotation.eulerAngles.y, andyObject.transform.rotation.z);
+				var cubeObject = Instantiate(Cubeist, hit.Pose.position, hit.Pose.rotation);
 
-                // Make Andy model a child of the anchor.
-                andyObject.transform.parent = anchor.transform;
+				// Create an anchor to allow ARCore to track the hitpoint as understanding of the physical
+				// world evolves.
+				var anchor2 = hit.Trackable.CreateAnchor(hit.Pose);
+
+				// Andy should look at the camera but still be flush with the plane.
+				cubeObject.transform.LookAt(FirstPersonCamera.transform);
+				cubeObject.transform.rotation = Quaternion.Euler(0.0f,
+					cubeObject.transform.rotation.eulerAngles.y + 1000, cubeObject.transform.rotation.z + 1000);
+
+				// Make Andy model a child of the anchor.
+				cubeObject.transform.parent = anchor2.transform;
+				// PolandScriptCanvas.SetActive (false); 
+
+				var polandObject = Instantiate(PolandScriptCanvas, hit.Pose.position, hit.Pose.rotation);
+
+				// Create an anchor to allow ARCore to track the hitpoint as understanding of the physical
+				// world evolves.
+				// var anchor = hit.Trackable.CreateAnchor(hit.Pose);
+
+				// Andy should look at the camera but still be flush with the plane.
+				polandObject.transform.LookAt(FirstPersonCamera.transform);
+				polandObject.transform.rotation = Quaternion.Euler(0.0f,
+					polandObject.transform.rotation.eulerAngles.y, polandObject.transform.rotation.z);
+
+				// Make Andy model a child of the anchor.
+				polandObject.transform.parent = anchor2.transform;
+				// PolandScriptCanvas.SetActive (false); 
+
+
             }
+
+//			if (Session.Raycast(touch.position.x, touch.position.y, raycastFilter, out hit))
+//			{
+//				var sphere = Instantiate(SphereBo, hit.Pose.position, hit.Pose.rotation);
+//
+//				// Create an anchor to allow ARCore to track the hitpoint as understanding of the physical
+//				// world evolves.
+//				var anchor = hit.Trackable.CreateAnchor(hit.Pose);
+//
+//				// Andy should look at the camera but still be flush with the plane.
+//				sphere.transform.LookAt(FirstPersonCamera.transform);
+//				sphere.transform.rotation = Quaternion.Euler(0.0f,
+//					sphere.transform.rotation.eulerAngles.y, sphere.transform.rotation.z);
+//
+//				// Make Andy model a child of the anchor.
+//				sphere.transform.parent = anchor.transform;
+//			}
         }
+
+			
 
         /// <summary>
         /// Quit the application if there was a connection error for the ARCore session.
