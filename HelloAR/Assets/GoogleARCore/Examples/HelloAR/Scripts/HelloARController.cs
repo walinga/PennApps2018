@@ -50,7 +50,7 @@ namespace GoogleARCore.HelloAR
 		/// </summary>
 		public GameObject PolandScriptCanvas; 
 
-		public GameObject Cubeist; 
+		public GameObject Cubeist;
 
         /// <summary>
         /// A gameobject parenting UI for displaying the "searching for planes" snackbar.
@@ -195,7 +195,12 @@ namespace GoogleARCore.HelloAR
 				// Make Andy model a child of the anchor.
 				cubeObject.transform.parent = anchor2.transform;
 
+                GameObject incrementor = cubeObject.transform.Find("textBox").gameObject;
+                ((TextMesh)incrementor.GetComponent("textMesh")).text = numBoxes.ToString();
+                numBoxes += 1;
+
 				//var numMesh = Instantiate(cubeObject, hit.Pose.position, hit.Pose.rotation);
+
 
 				var polandObject = Instantiate(PolandScriptCanvas, hit.Pose.position, hit.Pose.rotation);
 
