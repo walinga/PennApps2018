@@ -3,21 +3,21 @@
 
     <item
         is-multidex="false"
-        jar="/Users/kensuong/.android/build-cache/d5416e528ea7f734eb734ba75f89258e9de1ef2c/output/jars/libs/tango_java_lib.jar"
+        jar="/Users/kensuong/.android/build-cache/26dd78a48bbd907921c9bf72423cf5dce3ef5a81/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="dac29b41332a170a55310a99e3e2f3058e3ac419">
-        <dex dex="/Users/kensuong/dev/PennApps2018/HelloAR/Temp/gradleOut/build/intermediates/pre-dexed/release/tango_java_lib_500ae149d6bc79e9162890c8ee29f9e638fcc280.jar" />
+        sha1="3b08b853fe85764387602ff10decaf2b449f4ea2">
+        <dex dex="/Users/kensuong/dev/PennApps2018/HelloAR/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_f94233b052ec0006d479e45a01b929c63897253c.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/kensuong/.android/build-cache/002463d6e0eff414304cf9893337db76fc551374/output/jars/classes.jar"
+        jar="/Users/kensuong/.android/build-cache/e6b6b2b722c5093a691eb489e577921783f9cbcc/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="be35cfb98dbf80214072c4eb41da843fb0d4400d">
-        <dex dex="/Users/kensuong/dev/PennApps2018/HelloAR/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_0eee41631e1e43619e278fb721fe9568ec021a3a.jar" />
+        sha1="86661a14ae16b6d6ef1f52fc8c2a1963e9da348b">
+        <dex dex="/Users/kensuong/dev/PennApps2018/HelloAR/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_f0742fbdc8858bb7cea9d10837d934a94d1ff0eb.jar" />
     </item>
     <item
         is-multidex="false"
@@ -30,21 +30,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/kensuong/.android/build-cache/d5416e528ea7f734eb734ba75f89258e9de1ef2c/output/jars/classes.jar"
+        jar="/Users/kensuong/.android/build-cache/043333cc756794c20c46543572e1da61aee4ed14/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="3b08b853fe85764387602ff10decaf2b449f4ea2">
-        <dex dex="/Users/kensuong/dev/PennApps2018/HelloAR/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_25fc7b89c9c00162e2b8f9815d23a3a3e7920d42.jar" />
+        sha1="be35cfb98dbf80214072c4eb41da843fb0d4400d">
+        <dex dex="/Users/kensuong/dev/PennApps2018/HelloAR/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_2910be430c1c30a7b535c0af918a16cf10801a13.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/kensuong/.android/build-cache/9b6f21a52c4661bfa1a2cf4701ecdc3eafad20ec/output/jars/classes.jar"
+        jar="/Users/kensuong/.android/build-cache/26dd78a48bbd907921c9bf72423cf5dce3ef5a81/output/jars/libs/tango_java_lib.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="86661a14ae16b6d6ef1f52fc8c2a1963e9da348b">
-        <dex dex="/Users/kensuong/dev/PennApps2018/HelloAR/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_941982b3e924ca8d9dda9230c4fb82a54578de24.jar" />
+        sha1="dac29b41332a170a55310a99e3e2f3058e3ac419">
+        <dex dex="/Users/kensuong/dev/PennApps2018/HelloAR/Temp/gradleOut/build/intermediates/pre-dexed/release/tango_java_lib_44c6cec710757e873101133352f7f9905e0f7c71.jar" />
     </item>
 
 </items>

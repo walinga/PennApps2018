@@ -74,6 +74,11 @@ namespace GoogleARCore.HelloAR
         /// </summary>
         private bool m_IsQuitting = false;
 
+		public const float maxDropTime = 3f;
+		public float timeTillNextDrop = maxDropTime;
+
+		public int numBoxes = 1;
+
 
 //		public void awake() 
 //		{
@@ -133,18 +138,31 @@ namespace GoogleARCore.HelloAR
 
             SearchingForPlaneUI.SetActive(showSearchingUI);
 
-            // If the player has not touched the screen, we are done with this update.
+			// Timer to place cubes periodically
+			bool TimerDone = false;
+			timeTillNextDrop -= Time.deltaTime;
+			if (timeTillNextDrop < 0) {
+				TimerDone = true;
+				timeTillNextDrop = maxDropTime;
+			}
+
+			// Set the cube to spawn in the middle if the user has not tapped the screen.
             Touch touch;
-            if (Input.touchCount < 1 || (touch = Input.GetTouch(0)).phase != TouchPhase.Began)
-            {
-                return;
-            }
+			var tap_x = Screen.width/2f;
+			var tap_y = Screen.height/2f;
+
+			if (Input.touchCount >= 1 && (touch = Input.GetTouch (0)).phase == TouchPhase.Began) {
+				tap_x = touch.position.x;
+				tap_y = touch.position.y;
+			} else if (!TimerDone) {
+				return;
+			}
 
             // Raycast against the location the player touched to search for planes.
             TrackableHit hit;
             TrackableHitFlags raycastFilter = TrackableHitFlags.PlaneWithinBounds | TrackableHitFlags.PlaneWithinPolygon;
 
-            if (Session.Raycast(touch.position.x, touch.position.y, raycastFilter, out hit))
+            if (Session.Raycast(tap_x, tap_y, raycastFilter, out hit))
             {
 //                var andyObject = Instantiate(AndyAndroidPrefab, hit.Pose.position, hit.Pose.rotation);
 //
@@ -176,7 +194,8 @@ namespace GoogleARCore.HelloAR
 
 				// Make Andy model a child of the anchor.
 				cubeObject.transform.parent = anchor2.transform;
-				// PolandScriptCanvas.SetActive (false); 
+
+				//var numMesh = Instantiate(cubeObject, hit.Pose.position, hit.Pose.rotation);
 
 				var polandObject = Instantiate(PolandScriptCanvas, hit.Pose.position, hit.Pose.rotation);
 
