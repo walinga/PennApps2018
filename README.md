@@ -17,11 +17,11 @@ We also had problems with compatibility issues, we know what ARKit for Apple pho
 
 We also ran into problems with compatibility issues of Android Studio and Unity. Merely setting up the project making sure they worked on all computers that we were working on was a problem.   
 
-## Accomplishments that I'm proud of
-*TBD* We kept changing our mind about what app to make because we kept finding roadblocks along the way. 
+## Accomplishments that we're proud of
+We were not that experienced with making Android apps using Unity. We are proud that we were able to make an Android app in Unity and learn more about Unity as we code. 
 
-## What I learned
-AR is tough. We learned how to use Unity. 
+## What we learned
+AR is tough. We learned how to use Unity. We learned how to make graphics in Unity. 
 
 ## What's next for Living Philadelphia
-Make the breadcrumbs customizable and you can make them into different things. 
+Make the breadcrumbs customizable and you can make them into different things. This app has potential for indoor and outdoor applications. If you need to find where you once was, you use this app. If you need to find where you once was indoors, you use this app. If you need to find where you parked your car, you use breadcrumbs to find your car. If you need to find your campsite, you use breadcrumbs. 
